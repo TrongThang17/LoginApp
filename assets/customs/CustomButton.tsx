@@ -7,11 +7,9 @@ interface customButtonProps {
 
 const CustomButton: React.FC<customButtonProps> = props => {
   return (
-    // <View style={styles.container}>
     <TouchableOpacity style={styles.textButton}>
       <Text style={styles.text}>{props.label}</Text>
     </TouchableOpacity>
-    // </View>
   );
 };
 

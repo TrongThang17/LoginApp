@@ -1,11 +1,4 @@
-import {
-  View,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  KeyboardAvoidingView,
-} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
 import CustomTextInput from '../../../assets/customs/CustomTextInput';
 import {image} from '../../../assets/images/image';
@@ -25,6 +18,7 @@ const Login = () => {
       <View style={styles.viewHeader}>
         <Image source={image.logo} style={styles.logo} />
       </View>
+
       <View style={styles.viewTextInput}>
         <View style={styles.textInput}>
           <CustomTextInput placeHolder="Mã khách hàng" />
@@ -36,6 +30,7 @@ const Login = () => {
           <CustomTextInput placeHolder="Mật khẩu" />
         </View>
       </View>
+
       <View style={styles.viewUnderTextInput}>
         <View style={styles.viewHandlePass}>
           <View style={styles.viewSavePass}>
@@ -48,6 +43,7 @@ const Login = () => {
           </Text>
         </View>
       </View>
+
       <View style={styles.viewFooter}>
         <View style={styles.viewSuperFooter}>
           <View style={styles.viewTouchLogin}>
@@ -55,6 +51,7 @@ const Login = () => {
               <Text style={styles.textLogin}>Đăng Nhập</Text>
             </TouchableOpacity>
           </View>
+
           <View style={styles.viewTouchFaceScan}>
             <TouchableOpacity style={styles.touchFaceScan}>
               <Image source={image.faceScan} style={styles.imgFaceScan} />
@@ -83,13 +80,11 @@ const styles = StyleSheet.create({
   },
   viewTextInput: {
     justifyContent: 'center',
-    // backgroundColor: 'blue',
     height: 240,
   },
   viewUnderTextInput: {
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'pink',
     height: 50,
   },
   viewFooter: {

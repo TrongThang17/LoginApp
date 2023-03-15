@@ -8,19 +8,24 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
+
 const CELL_COUNT = 6;
+
 const Authenticate = () => {
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
   });
+
   return (
     <View style={styles.container}>
       <View style={styles.viewHeader}>
         <Image source={image.logo} style={styles.logoHeader} />
       </View>
+
       <View style={styles.viewTextInput}>
         <CodeField
           ref={ref}
@@ -44,6 +49,7 @@ const Authenticate = () => {
           )}
         />
       </View>
+
       <View style={styles.viewFooter}>
         <CustomButton label="Xác Nhận" />
       </View>
@@ -78,7 +84,6 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
   },
-
   cell: {
     width: 58,
     height: 90,

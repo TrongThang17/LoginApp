@@ -6,11 +6,7 @@ interface customInputProps {
 }
 
 const CustomTextInput: React.FC<customInputProps> = props => {
-  return (
-    // <View style={styles.container}>
-    <TextInput placeholder={props.placeHolder} style={styles.textInput} />
-    // </View>
-  );
+  return <TextInput placeholder={props.placeHolder} style={styles.textInput} />;
 };
 
 const styles = StyleSheet.create({
