@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../screens/login/Login';
 import ForgetPass from '../screens/login/ForgetPass';
 import Authenticate from '../screens/login/Authenticate';
+import {Colors} from '../../assets/Colors';
 const Navigation = () => {
   const Stack = createStackNavigator();
   return (
@@ -12,16 +13,19 @@ const Navigation = () => {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+          }}
         />
         <Stack.Screen
           name="Authenticate"
           component={Authenticate}
           options={{
             title: 'Đăng Nhập',
-            headerTitleStyle: {
-              marginLeft: 90,
-              fontWeight: '600',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: Colors.color_bg_auth,
+              borderBottomWidth: 1,
             },
           }}
         />
@@ -30,9 +34,10 @@ const Navigation = () => {
           component={ForgetPass}
           options={{
             title: 'Quên Mật Khẩu',
-            headerTitleStyle: {
-              marginLeft: 60,
-              fontWeight: '600',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: Colors.color_bg_auth,
+              borderBottomWidth: 1,
             },
           }}
         />

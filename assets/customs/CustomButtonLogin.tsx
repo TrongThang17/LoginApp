@@ -4,11 +4,12 @@ import {Colors} from '../Colors';
 
 interface customButtonProps {
   label?: string;
+  img?: string;
   colors?: string;
   onPress?: () => void;
 }
 
-const CustomButton: React.FC<customButtonProps> = props => {
+const CustomButtonLogin: React.FC<customButtonProps> = props => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -16,16 +17,21 @@ const CustomButton: React.FC<customButtonProps> = props => {
         onPress={props.onPress}>
         <Text style={styles.text}>{props.label}</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.buttonFaceID, {backgroundColor: props.colors}]}>
+        <Image source={props.img} />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: 312,
+    flexDirection: 'row',
   },
   buttonLogin: {
-    width: 328,
+    width: 260,
     height: 44,
     borderRadius: 8,
     justifyContent: 'center',
@@ -35,5 +41,12 @@ const styles = StyleSheet.create({
   text: {
     color: Colors.color_text_login,
   },
+  buttonFaceID: {
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
 });
-export default CustomButton;
+export default CustomButtonLogin;

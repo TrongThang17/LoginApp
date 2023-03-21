@@ -1,0 +1,17 @@
+export const Colors = {
+  color_btn_login: 'rgba(231, 84, 55, 1)',
+  color_text_login: 'rgba(255, 255, 255, 1)',
+  color_text_fogotpass: 'rgba(0, 140, 255, 1)',
+  color_text1: 'rgba(51, 48, 48, 1)',
+  color_text_placeholder_login: 'rgba(199, 198, 197, 1)',
+  color_textInput_login: 'rgba(255, 255, 255, 1)',
+  color_bg: '#F8F7F6',
+  color_bg_auth: 'rgba(255, 255, 255, 1)',
+  color_textInput_forget: 'rgba(255, 255, 255, 1)',
+  color_border_savepass: '#C7C6C5',
+  color_button_auth_select: 'rgba(215, 26, 33, 1)',
+  color_button_auth_not_select: 'rgba(236, 236, 236, 1)',
+  color_text_email: 'rgba(199, 198, 197, 1)',
+  color_border_input: 'rgba(215, 26, 33, 1)',
+  color_text_err: 'rgba(215, 26, 33, 1)',
+};
