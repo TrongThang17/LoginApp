@@ -24,9 +24,7 @@ const schema = yup.object().shape({
 const Login = () => {
   const [showPW, setShowPW] = useState(true);
   const [savePass, setSavePass] = useState(false);
-  const [showBoderInput1, setShowBorderInput1] = useState(false);
-  const [showBoderInput2, setShowBorderInput2] = useState(false);
-  const [showBoderInput3, setShowBorderInput3] = useState(false);
+
   const {
     control,
     handleSubmit,
@@ -35,12 +33,6 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
   const navigation = useNavigation();
-
-  useEffect(() => {
-    errors.customerID ? setShowBorderInput1(true) : setShowBorderInput1(false);
-    errors.ID ? setShowBorderInput2(true) : setShowBorderInput2(false);
-    errors.password ? setShowBorderInput3(true) : setShowBorderInput3(false);
-  }, [errors.customerID, errors.ID, errors.password]);
 
   const onLogin = useCallback((value: any) => {
     navigation.navigate('Authenticate');
@@ -76,7 +68,7 @@ const Login = () => {
                   placeHolder="Mã khách hàng"
                   onChangeText={value => onChange(value)}
                   value={value}
-                  isShowBorderInput={showBoderInput1}
+                  valueErr={errors.customerID}
                 />
               )}
               name={'customerID'}
@@ -98,7 +90,7 @@ const Login = () => {
                   placeHolder="ID"
                   onChangeText={onChange}
                   value={value}
-                  isShowBorderInput={showBoderInput2}
+                  valueErr={errors.ID}
                 />
               )}
               name={'ID'}
@@ -122,7 +114,7 @@ const Login = () => {
                   value={value}
                   isShowPW={showPW}
                   onShowPW={onHandleShowPW}
-                  isShowBorderInput={showBoderInput3}
+                  valueErr={errors.password}
                 />
               )}
               name={'password'}

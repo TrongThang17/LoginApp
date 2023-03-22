@@ -14,7 +14,7 @@ interface customInputProps {
   value?: any;
   onShowPW?: () => void;
   isShowPW?: boolean;
-  isShowBorderInput?: boolean;
+  valueErr?: string;
 }
 
 const CustomTextInput: React.FC<customInputProps> = props => {
@@ -23,8 +23,8 @@ const CustomTextInput: React.FC<customInputProps> = props => {
       style={[
         styles.container,
         {
-          borderWidth: props.isShowBorderInput ? 1 : 0,
-          borderColor: props.isShowBorderInput ? Colors.color_border_input : '',
+          borderWidth: props.valueErr ? 1 : 0,
+          borderColor: props.valueErr ? Colors.color_border_input : '',
         },
       ]}>
       <TextInput
