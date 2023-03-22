@@ -4,12 +4,20 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../screens/login/Login';
 import ForgetPass from '../screens/login/ForgetPass';
 import Authenticate from '../screens/login/Authenticate';
+import SeeMore from '../screens/dashboard/SeeMore';
 import {Colors} from '../../assets/Colors';
 const Navigation = () => {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="SeeMore"
+          component={SeeMore}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Login"
           component={Login}

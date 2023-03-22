@@ -5,4 +5,7 @@ export const image = {
   eye: require('../images/eye.png'),
   savePass: require('../images/savePass.png'),
   errorAuth: require('../images/errorAuth.png'),
+  find: require('../images/find.png'),
+  filter: require('../images/filter.png'),
+  noti: require('../images/noti.png'),
 };

@@ -35,7 +35,7 @@ const Login = () => {
   const navigation = useNavigation();
 
   const onLogin = useCallback((value: any) => {
-    navigation.navigate('Authenticate');
+    navigation.navigate('SeeMore');
   }, []);
 
   const onForgetPass = useCallback(() => {
@@ -139,9 +139,9 @@ const Login = () => {
               <Text style={styles.savePass}>Lưu mật khẩu</Text>
             </View>
             <View style={styles.viewTextForgetPass}>
-              <Text style={styles.textForgetPass} onPress={onForgetPass}>
-                Quên mật khẩu ?
-              </Text>
+              <TouchableOpacity onPress={onForgetPass}>
+                <Text style={styles.textForgetPass}>Quên mật khẩu ?</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -214,7 +214,6 @@ const styles = StyleSheet.create({
   textInput: {
     alignItems: 'center',
     marginBottom: 8,
-    // backgroundColor: 'red',
   },
   viewSavePass: {
     flexDirection: 'row',

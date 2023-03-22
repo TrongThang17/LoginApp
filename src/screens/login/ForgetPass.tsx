@@ -13,8 +13,6 @@ const schema = yup.object().shape({
   email: yup.string().required().email(),
 });
 const ForgetPass = () => {
-  const [showBoderInput, setShowBorderInput] = useState(false);
-
   const {
     control,
     handleSubmit,
@@ -26,11 +24,6 @@ const ForgetPass = () => {
   const onSubmit = useCallback((value: any) => {
     console.log('aaa', value);
   }, []);
-
-  useEffect(() => {
-    errors.email ? setShowBorderInput(true) : setShowBorderInput(false);
-    console.log('aaa');
-  }, [errors.email]);
 
   return (
     <View style={styles.container}>
@@ -55,7 +48,7 @@ const ForgetPass = () => {
               style={[
                 styles.viewTextInputSuper,
                 {
-                  borderColor: showBoderInput
+                  borderColor: errors.email
                     ? Colors.color_border_input
                     : 'black',
                 },

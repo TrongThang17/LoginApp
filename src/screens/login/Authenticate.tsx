@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   viewFooter: {
+    height: 44,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     borderWidth: 1,
     fontSize: 22,
-    marginRight: 5,
+    marginRight: 10,
     textAlign: 'center',
     paddingTop: 14,
     color: Colors.color_text1,
