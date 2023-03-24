@@ -8,4 +8,9 @@ export const image = {
   find: require('../images/find.png'),
   filter: require('../images/filter.png'),
   noti: require('../images/noti.png'),
+  setting: require('../images/setting.png'),
+  hotline: require('../images/hotline.png'),
+  history: require('../images/history.png'),
+  powerMeter: require('../images/power.png'),
+  seeMore: require('../images/seeMore.png'),
 };

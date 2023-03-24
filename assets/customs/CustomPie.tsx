@@ -50,7 +50,11 @@ const CustomPie: FC<props> = props => {
           <Text style={styles.textPieChart1}>
             {props.text_percent_pieChart}
           </Text>
-          <Text style={styles.textUnder}>{props.text_under_percent}</Text>
+          {props.text_under_percent ? (
+            <Text style={styles.textUnder}>{props.text_under_percent}</Text>
+          ) : (
+            ''
+          )}
         </View>
       </View>
       <View style={styles.viewFooter}>

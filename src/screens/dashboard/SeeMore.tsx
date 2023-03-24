@@ -38,7 +38,7 @@ const SeeMore = () => {
           <CustomPie
             title="Đèn"
             color_pieChart={Colors.color_circle_pieChart1}
-            percentage={100}
+            percentage={56}
             text_percent_pieChart={'56%'}
             text_under_percent={'Số đèn sáng (20/28)'}
             text_up1={'1250'}
@@ -78,7 +78,6 @@ const SeeMore = () => {
             color_pieChart={Colors.color_circle_pieChart3}
             percentage={46}
             text_percent_pieChart={'46%'}
-            text_under_percent={'Số đèn sáng (20/28)'}
             text_up1={'232/504'}
             text_down1={'Tổng công suất đang hoạt động (kW)'}
             color_textUp1={Colors.color_text_wattage}
