@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {FC} from 'react';
 import {Colors} from '../Colors';
-import Pie from 'react-native-pie';
+import {VictoryPie} from 'victory-native';
 interface props {
   title?: string;
   percentage?: any;
@@ -23,20 +23,28 @@ interface props {
 }
 
 const CustomPie: FC<props> = props => {
+  const data1 = [
+    {
+      x: `${100 - props.percentage}%`,
+      y: 100 - props.percentage,
+    },
+
+    {x: `${props.percentage}%`, y: props.percentage},
+  ];
   return (
     <View style={styles.viewPieChart1}>
       <Text style={styles.titlePieChart1}>{props.title}</Text>
       <View style={styles.pieChart1}>
-        <Pie
-          radius={80}
+        <VictoryPie
+          startAngle={148}
+          endAngle={-150}
+          data={data1}
           innerRadius={52}
-          sections={[
-            {
-              percentage: props.percentage,
-              color: props.color_pieChart,
-            },
-          ]}
-          backgroundColor={Colors.color_bg_pie}
+          radius={80}
+          width={171}
+          height={171}
+          colorScale={[Colors.color_bg_pie, props.color_pieChart]}
+          labels={() => null}
         />
         <View style={styles.viewTextPieChart1}>
           <Text style={styles.textPieChart1}>
@@ -135,6 +143,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     fontSize: 14,
     fontWeight: '700',
+    marginBottom: 6,
   },
   textDown: {
     textAlign: 'center',
