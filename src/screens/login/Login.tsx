@@ -1,5 +1,12 @@
-import {View, Image, StyleSheet, TouchableOpacity, Text} from 'react-native';
-import React, {useCallback, useEffect, useState} from 'react';
+import {
+  View,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Alert,
+} from 'react-native';
+import React, {useCallback, useState} from 'react';
 import CustomTextInput from '../../../assets/customs/CustomTextInput';
 import {image} from '../../../assets/images/image';
 import {useNavigation} from '@react-navigation/native';
@@ -9,6 +16,7 @@ import {useForm, Controller} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import axios from 'axios';
 
 interface validate {
   customerID: number;
@@ -24,6 +32,7 @@ const schema = yup.object().shape({
 const Login = () => {
   const [showPW, setShowPW] = useState(true);
   const [savePass, setSavePass] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const {
     control,
@@ -32,10 +41,11 @@ const Login = () => {
   }: any = useForm<validate>({
     resolver: yupResolver(schema),
   });
+
   const navigation = useNavigation();
 
   const onLogin = useCallback((value: any) => {
-    navigation.navigate('SeeMore');
+    callAPI(value);
   }, []);
 
   const onForgetPass = useCallback(() => {
@@ -49,6 +59,53 @@ const Login = () => {
   const onHandleSavePass = useCallback(() => {
     savePass ? setSavePass(false) : setSavePass(true);
   }, [savePass]);
+
+  const callAPI = (value: any) => {
+    axios
+      .post('https://api.mes.bhsoft.co/api/auth/login', {
+        code: '000011',
+        username: 'admin',
+        password: 'Mfuhailight@123',
+      })
+      .then((response: any) => {
+        console.log(response.data);
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
+
+    // axios
+    //   .get(
+    //     'https://6422a9ca77e7062b3e1f2fcd.mockapi.io/auth',
+
+    //     // {
+    //     //   code: value.customerID,
+    //     //   username: value.ID,
+    //     //   password: value.password,
+    //     // },
+    //   )
+    //   .then((response: any) => {
+    //     response.data.filter((element: any) => {
+    //       if (
+    //         element.code == value.customerID &&
+    //         element.username == value.ID &&
+    //         element.password == value.password
+    //       ) {
+    //         setIsLogin(true);
+    //       }
+    //     });
+
+    //     if (isLogin == true) {
+    //       navigation.navigate('Authenticate');
+    //       setIsLogin(false);
+    //     } else {
+    //       Alert.alert('Sai thong tin !!');
+    //     }
+    //   })
+    //   .catch((error: any) => {
+    //     console.log('err', error);
+    //   });
+  };
   return (
     <KeyboardAwareScrollView style={{flex: 1}}>
       <View style={styles.container}>

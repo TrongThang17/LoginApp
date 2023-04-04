@@ -56,8 +56,9 @@ const Navigation = () => {
       </Stack.Navigator>
     );
   };
-  return (
-    <NavigationContainer>
+
+  const tabScreen = () => {
+    return (
       <Tab.Navigator>
         <Tab.Screen
           name="Setting"
@@ -110,6 +111,57 @@ const Navigation = () => {
           }}
         />
       </Tab.Navigator>
+    );
+  };
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {/* <Stack.Screen
+          name="Tab"
+          component={tabScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen name="Stack" component={stackScreen} /> */}
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Authenticate"
+          component={Authenticate}
+          options={{
+            title: 'Đăng Nhập',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: Colors.color_bg_auth,
+              borderBottomWidth: 1,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="ForgetPass"
+          component={ForgetPass}
+          options={{
+            title: 'Quên Mật Khẩu',
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: Colors.color_bg_auth,
+              borderBottomWidth: 1,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="SeeMore"
+          component={SeeMore}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

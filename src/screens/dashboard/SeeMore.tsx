@@ -5,11 +5,12 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Text,
 } from 'react-native';
 import React from 'react';
 import {Colors} from '../../../assets/Colors';
 import {image} from '../../../assets/images/image';
-
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import CustomPie from '../../../assets/customs/CustomPie';
 const SeeMore = () => {
   return (
@@ -82,6 +83,28 @@ const SeeMore = () => {
             text_down1={'Tổng công suất đang hoạt động (kW)'}
             color_textUp1={Colors.color_text_wattage}
           />
+        </View>
+        <View>
+          <MapView
+            provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+            style={styles.map}
+            region={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.015,
+              longitudeDelta: 0.0121,
+            }}
+          />
+        </View>
+
+        <View>
+          <TouchableOpacity
+            style={{width: 60, height: 60, backgroundColor: 'red'}}>
+            <Text>CALL</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{width: '100%', height: 100}}>
+          {/* <Text>{data}</Text> */}
         </View>
       </ScrollView>
     </View>
@@ -175,7 +198,12 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: Colors.color_text_pieChart1,
   },
-  describe: {},
+  map: {
+    height: 400,
+    width: 400,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
 });
 
 export default SeeMore;
