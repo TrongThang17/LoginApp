@@ -39,11 +39,12 @@ const Signature = () => {
   };
 
   const handleConfirm = () => {
-    console.log('end');
     ref.current.readSignature();
     // setBase64Img(Signature);
     console.log('state', base64Img);
-    base64Img == null ? setBase64Img(filePath) : console.log('b');
+    if (base64Img == '') {
+      setBase64Img(filePath);
+    }
   };
 
   //   const requestCameraPermission = async () => {
@@ -156,6 +157,7 @@ const Signature = () => {
       }
       setFilePath(response.assets[0].uri);
       setCount(1);
+      setBase64Img('');
     });
   }, []);
 
