@@ -35,7 +35,7 @@ const Signature = () => {
 
   const onBegin = () => {
     setCount(count + 1);
-    setFilePath({});
+    setFilePath('');
   };
 
   const handleConfirm = () => {
@@ -43,7 +43,7 @@ const Signature = () => {
     ref.current.readSignature();
     // setBase64Img(Signature);
     console.log('state', base64Img);
-    base64Img == null ? setBase64Img(filePath) : console.log('khum ngu');
+    base64Img == null ? setBase64Img(filePath) : console.log('b');
   };
 
   //   const requestCameraPermission = async () => {
