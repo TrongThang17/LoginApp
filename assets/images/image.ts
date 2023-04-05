@@ -13,4 +13,7 @@ export const image = {
   history: require('../images/history.png'),
   powerMeter: require('../images/power.png'),
   seeMore: require('../images/seeMore.png'),
+  back: require('../images/back.png'),
+  chooseFile: require('../images/chooseFile.png'),
+  draw: require('../images/draw.png'),
 };

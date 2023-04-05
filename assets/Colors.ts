@@ -31,4 +31,9 @@ export const Colors = {
   color_text_cabinet3: '#FFC107',
   color_text_cabinet4: '#F41127',
   color_text_wattage: '#1FBD9D',
+  color_bg_signature: 'rgba(236, 236, 236, 1)',
+  color_text_uploadImg: 'rgba(231, 84, 55, 1)',
+  color_text_draw: 'rgba(155, 154, 153, 1)',
+  color_btn_signature: 'rgba(231, 84, 55, 1)',
+  color_btn_disabled: 'rgba(255, 219, 211, 1)',
 };

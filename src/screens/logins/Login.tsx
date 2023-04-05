@@ -45,7 +45,8 @@ const Login = () => {
   const navigation = useNavigation();
 
   const onLogin = useCallback((value: any) => {
-    callAPI(value);
+    // callAPI(value);
+    navigation.navigate('Signature');
   }, []);
 
   const onForgetPass = useCallback(() => {
@@ -60,52 +61,52 @@ const Login = () => {
     savePass ? setSavePass(false) : setSavePass(true);
   }, [savePass]);
 
-  const callAPI = (value: any) => {
-    axios
-      .post('https://api.mes.bhsoft.co/api/auth/login', {
-        code: '000011',
-        username: 'admin',
-        password: 'Mfuhailight@123',
-      })
-      .then((response: any) => {
-        console.log(response.data);
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
+  // const callAPI = (value: any) => {
+  //   axios
+  //     .post('https://api.mes.bhsoft.co/api/auth/login', {
+  //       code: '000011',
+  //       username: 'admin',
+  //       password: 'Mfuhailight@123',
+  //     })
+  //     .then((response: any) => {
+  //       console.log(response.data);
+  //     })
+  //     .catch((err: any) => {
+  //       console.log(err);
+  //     });
 
-    // axios
-    //   .get(
-    //     'https://6422a9ca77e7062b3e1f2fcd.mockapi.io/auth',
+  //   // axios
+  //   //   .get(
+  //   //     'https://6422a9ca77e7062b3e1f2fcd.mockapi.io/auth',
 
-    //     // {
-    //     //   code: value.customerID,
-    //     //   username: value.ID,
-    //     //   password: value.password,
-    //     // },
-    //   )
-    //   .then((response: any) => {
-    //     response.data.filter((element: any) => {
-    //       if (
-    //         element.code == value.customerID &&
-    //         element.username == value.ID &&
-    //         element.password == value.password
-    //       ) {
-    //         setIsLogin(true);
-    //       }
-    //     });
+  //   //     // {
+  //   //     //   code: value.customerID,
+  //   //     //   username: value.ID,
+  //   //     //   password: value.password,
+  //   //     // },
+  //   //   )
+  //   //   .then((response: any) => {
+  //   //     response.data.filter((element: any) => {
+  //   //       if (
+  //   //         element.code == value.customerID &&
+  //   //         element.username == value.ID &&
+  //   //         element.password == value.password
+  //   //       ) {
+  //   //         setIsLogin(true);
+  //   //       }
+  //   //     });
 
-    //     if (isLogin == true) {
-    //       navigation.navigate('Authenticate');
-    //       setIsLogin(false);
-    //     } else {
-    //       Alert.alert('Sai thong tin !!');
-    //     }
-    //   })
-    //   .catch((error: any) => {
-    //     console.log('err', error);
-    //   });
-  };
+  //   //     if (isLogin == true) {
+  //   //       navigation.navigate('Authenticate');
+  //   //       setIsLogin(false);
+  //   //     } else {
+  //   //       Alert.alert('Sai thong tin !!');
+  //   //     }
+  //   //   })
+  //   //   .catch((error: any) => {
+  //   //     console.log('err', error);
+  //   //   });
+  // };
   return (
     <KeyboardAwareScrollView style={{flex: 1}}>
       <View style={styles.container}>
